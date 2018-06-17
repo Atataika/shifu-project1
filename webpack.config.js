@@ -27,10 +27,13 @@ let conf = {
 		]
 	},
 	devServer: {
-		contentBase: path.join(__dirname, "dist")
+		contentBase: path.join(__dirname, "dist"),
+		inline: true,
+  		port: 3000,
+  		hot: true
 	},
 	plugins: [
-		new ExtractTextPlugin("styles.css"),
+		new ExtractTextPlugin("style.css"),
 		new HtmlWebpackPlugin({
 			inject: false,
 			hash: true,
