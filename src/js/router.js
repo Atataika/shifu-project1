@@ -1,7 +1,9 @@
 import React from 'react'
+import {render} from 'react-dom'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import Admin from './components/Admin'
 import Home from './components/Home'
+import Add from './components/Add'
 
 function Rout() {
 	return (
@@ -14,7 +16,8 @@ function Rout() {
 				</nav>
 			</div>
 			<Route exact path="/" component={Home} />
-			<Route path="/admin" component={Admin} />
+			<Route exact path="/admin" component={Admin} />
+			<Route path="/admin/add" component={Add} />
 		</div>
 	</Router>
 	)

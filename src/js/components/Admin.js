@@ -1,4 +1,5 @@
 import React from 'react'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 function Admin() {
 	const list = Object.keys(localStorage).map(myKey => {
@@ -21,6 +22,9 @@ function Admin() {
 		<div className='container'>
 			<div className='jumbotron'>
 				<h1 className='display-3 text-center'>Admin Page</h1>
+			</div>
+			<div className='btn btn-outline-primary'>
+				<Link to='/admin/add' className='align-right'>Добавить запись</Link>
 			</div>
 			<div className='card mx-auto' style={{width: '50%'}}>{ list }</div>
 		</div>

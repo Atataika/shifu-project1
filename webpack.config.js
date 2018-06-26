@@ -6,7 +6,7 @@ let conf = {
 	entry: './src/js/App.js',
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		filename: 'main.js',
+		filename: 'App.js',
 		publicPath: 'dist/'
 	},
 	devServer: {
