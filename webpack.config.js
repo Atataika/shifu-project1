@@ -3,7 +3,7 @@ let ExtractTextPlugin = require("extract-text-webpack-plugin");
 let HtmlWebpackPlugin = require("html-webpack-plugin");
 
 let conf = {
-	entry: './src/js/main.js',
+	entry: './src/js/App.js',
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		filename: 'main.js',

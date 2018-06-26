@@ -1,11 +1,12 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from 'react'
 
 function Home() {
 	return (
-			<div>
-				<h1>Mainpage</h1>
+		<div className='container'>
+			<div className='jumbotron px-3'>
+				<h1 className='display-3 text-center'>Mainpage</h1>
 			</div>
+		</div>
 	)
 }
 
