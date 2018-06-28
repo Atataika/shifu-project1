@@ -8,6 +8,7 @@ export default class Add extends Component {
     e.preventDefault()
     const value = e.target.elements[0].value
     window.localStorage.setItem('myKey'+value, '{"title":"'+value+'"}')
+    window.location = '/admin'
 }
 render() {
 	return (
@@ -18,7 +19,7 @@ render() {
 			<div className='row'>
 				<form className='col-md-4' onSubmit={this.handleSubmit}>
 					<input type='text' className='form-control' />
-					<button type='submit' className='btn btn-outline-primary'><Link to="/admin">Добавить</Link></button>
+					<button type='submit' className='btn btn-outline-primary'>Добавить</button>
 				</form>
 			</div>
 		</div>

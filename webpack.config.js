@@ -5,12 +5,9 @@ let HtmlWebpackPlugin = require("html-webpack-plugin");
 let conf = {
 	entry: './src/js/App.js',
 	output: {
-		path: path.resolve(__dirname, './dist'),
+		path: path.resolve(__dirname, 'dist'),
 		filename: 'App.js',
 		publicPath: 'dist/'
-	},
-	devServer: {
-		overlay: true
 	},
 	module: {
 		rules: [
@@ -27,7 +24,9 @@ let conf = {
 		]
 	},
 	devServer: {
-		contentBase: path.join(__dirname, "dist"),
+		contentBase: path.join(__dirname, "./dist"),
+		historyApiFallback: true,
+		overlay: true,		
 		inline: true,
   		port: 3000,
   		hot: true
