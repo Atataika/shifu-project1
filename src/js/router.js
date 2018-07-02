@@ -1,8 +1,8 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import Admin from './components/Admin'
+import Admin from './components/adminpage/Admin'
 import Home from './components/Home'
-import Add from './components/Add'
+import Add from './components/adminpage/Add'
 
 function Rout() {
 	return (
@@ -18,6 +18,7 @@ function Rout() {
 			<Route exact path="/" component={Home} />
 			<Route exact path="/admin" component={Admin} />
 			<Route path="/admin/add" component={Add} />
+			
 		</div>
 	</Router>
 	)

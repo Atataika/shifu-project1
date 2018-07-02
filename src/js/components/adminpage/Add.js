@@ -1,7 +1,5 @@
-import {BrowserRouter, Route, Link} from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
-import { render } from "react-dom";
 import React, { Component } from 'react'
+import { render } from 'react-dom'
 
 export default class Add extends Component {
   handleSubmit(e) {
