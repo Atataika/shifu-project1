@@ -1,24 +1,26 @@
 import React from 'react'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom'
+import ElementAdd from './components/adminpage/ElementAdd'
 import Admin from './components/adminpage/Admin'
 import Home from './components/Home'
-import Add from './components/adminpage/Add'
 
 function Rout() {
 	return (
 	<Router>
 		<div>
-			<div className='d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow'>
+			<div className='p-3 px-md-4 mb-3 border-bottom box-shadow'>
 				<nav>
 					<Link className='p-2 text-dark' to="/">Home</Link>
 					<Link className='p-2 text-dark' to="/admin">Admin</Link>
 				</nav>
 			</div>
-			
-			<Route exact path="/" component={Home} />
-			<Route exact path="/admin" component={Admin} />
-			<Route path="/admin/add" component={Add} />
-			
+		
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route path="/admin" component={Admin} />
+				<Route path="/admin/add" component={ElementAdd} />
+				<Redirect to='/'/>
+			</Switch>
 		</div>
 	</Router>
 	)

@@ -3,11 +3,13 @@ let ExtractTextPlugin = require("extract-text-webpack-plugin");
 let HtmlWebpackPlugin = require("html-webpack-plugin");
 
 let conf = {
-	entry: './src/js/App.js',
+	entry: {
+		app: './src/js/App.js'
+	},
+	
 	output: {
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, './dist'),
 		filename: 'App.js',
-		publicPath: 'dist/'
 	},
 	module: {
 		rules: [
@@ -24,8 +26,9 @@ let conf = {
 		]
 	},
 	devServer: {
-		contentBase: path.join(__dirname, "./dist"),
-		historyApiFallback: true,
+		historyApiFallback: {
+			index: '/'
+		},
 		overlay: true,		
 		inline: true,
   		port: 3000,
@@ -34,20 +37,10 @@ let conf = {
 	plugins: [
 		new ExtractTextPlugin("style.css"),
 		new HtmlWebpackPlugin({
-			inject: false,
-			hash: true,
-			template: './src/index.html',
+			template: path.resolve(__dirname, './src/index.html'),
 			filename: 'index.html'
 		})
 	]
 };
 
-module.exports = (env, options) => {
-	let production = options.mode === 'production';
-
-	conf.devtool = production
-					? false
-					: 'eval-sourcemap';
-
-	return conf;
-}
+module.exports = conf;

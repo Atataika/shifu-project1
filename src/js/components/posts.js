@@ -1,4 +1,4 @@
-export default [
+var posts = [
   {
     "id": "hwrgf1",
   	"title": "title",
@@ -60,3 +60,5 @@ export default [
     "slug": "slug9"
   }
 ]
+
+export default posts
